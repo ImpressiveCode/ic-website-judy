@@ -10,3 +10,4 @@ Authors
 
 Kemal Erdem
 Mateusz Białczak
+Michał Antoszczuk
