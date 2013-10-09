@@ -1,21 +1,22 @@
 judy
 ==========
 
-requirements
-==========
+Requirements
+--------------
 
 PHP 5.5.3
 Apache v2.4.6
 Zend Engine 2.5.0
 
 Authors
-==========
+--------------
+
 Kemal Erdem
 Mateusz Białczak
 Michał Antoszczuk
 
 Opis instalacji systemu
-
+--------------
 Aby uruchomić aplikację zend framework 2 należy włączyć konsolę która posiada obsługę skryptów php.
 Po przejściu do folderu z aplikacja Zend Framework 2 (Judy) należy wydać polecenie:
 php composer.phar install
