@@ -1,6 +1,4 @@
 judy
-
-
 ==========
 requirements
 PHP 5.5.3
