@@ -1,4 +1,3 @@
-
 judy
 ==========
 (opis)
@@ -13,6 +12,7 @@ Wymagania
 - PHP 5.5.3
 - Apache v2.4.6
 - Zend Engine 2.5.0
+- klient GitHub
 
 Autorzy
 --------------
@@ -112,7 +112,17 @@ Pakiet ten ściągnąć można pod adresem:
 
 http://www.apachefriends.org/en/xampp-windows.html
 
-Po zainstalowaniu XAMPPa, możemy zająć się instalacją naszej aplikacji.
-Cały ściągnięty katalog judy należy przenieść do folderu ```htdocs``` w katalogu roboczym XAMPPa. Domyślnie jest to ```c:\xampp\htdocs\```.
-Następnym krokiem jest instalacja Zend Framework 2 na naszym komputerze.
+Po zainstalowaniu XAMPPa. Potrzebny będzie także klient GitHub, do ściągnięcia na stronie 
+
+http://windows.github.com/
+
+Następnie możemy zająć się instalacją naszej aplikacji.
+Ściągnięte repozytorium proponujemy wrzucić do tymczasowego katalogu ```c:\judy\```.
+Aby zainstalować aplikację, należy wykonać komendę ```php composer.phar install``` za pomocą php umieszczonego w folderze XAMPPa.
+W linii komend wpisujemy:
+```
+cd c:\judy\ic-website-judy-master\
+c:\xampp\php\php.exe composer.phar install
+```
+
 (ciąg dalszy nastąpi)
