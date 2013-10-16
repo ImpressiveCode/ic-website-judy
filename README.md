@@ -118,11 +118,49 @@ http://windows.github.com/
 
 Następnie możemy zająć się instalacją naszej aplikacji.
 Ściągnięte repozytorium proponujemy wrzucić do tymczasowego katalogu ```c:\judy\```.
+Całą zawartość katalogu ic-website-judy należy skopiować do ```c:\xampp\htdocs\judy\```.
 Aby zainstalować aplikację, należy wykonać komendę ```php composer.phar install``` za pomocą php umieszczonego w folderze XAMPPa.
 W linii komend wpisujemy:
 ```
-cd c:\judy\ic-website-judy-master\
+cd c:\xampp\htdocs\judy\
 c:\xampp\php\php.exe composer.phar install
 ```
 
+Jeśli instalator nie wykaże błędów, możemy przejść do kolejnego kroku.
+
+Aby strona wyświetlała się poprawnie, należy zmienić ustawienia VirtualHost w serwerze Apache. Możemy to zrobić poprzez edycję pliku
+```C:\xampp\apache\conf\extra\httpd-vhosts.conf```
+dopisując na jego końcu:
+```
+NameVirtualHost *
+  <VirtualHost *>
+    DocumentRoot "C:/xampp/htdocs"
+    ServerName localhost
+  </VirtualHost>
+  <VirtualHost *>
+    DocumentRoot "C:/xampp/htdocs/judy/public"
+    ServerName judy.local
+  <Directory "C:/xampp/htdocs/judy/public">
+    Order allow,deny
+    Allow from all
+  </Directory>
+</VirtualHost>
+```
+
+Następnie musimy dodać na końcu pliku ```C:\Windows\System32\Drivers\etc\hosts```
+linię ```127.0.0.1 judy.local```
+
+Dzięki temu nasza strona będzie dostępna pod adresem http://judy.local
+
+Teraz wystarczy zrestartować serwer Apache i udać się pod adres http://judy.local - panel powinien wyświetlić się poprawnie.
+
 (ciąg dalszy nastąpi)
+
+Plik konfiguracyjny bazy danych znajduje się pod adresem:
+```C:\xampp\htdocs\judy\config\autoload\doctrine.global.php```
+
+Tworzenie bazy danych:
+```
+cd C:\xampp\htdocs\judy\vendor\doctrine\doctrine-module\bin\
+c:\xampp\php\php.exe doctrine-module.php orm:schema-tool:create
+```
