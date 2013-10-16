@@ -129,7 +129,10 @@ c:\xampp\php\php.exe composer.phar install
 Jeśli instalator nie wykaże błędów, możemy przejść do kolejnego kroku.
 
 Aby strona wyświetlała się poprawnie, należy zmienić ustawienia VirtualHost w serwerze Apache. Możemy to zrobić poprzez edycję pliku
-```C:\xampp\apache\conf\extra\httpd-vhosts.conf```
+```
+C:\xampp\apache\conf\extra\httpd-vhosts.conf
+```
+
 dopisując na jego końcu:
 ```
 NameVirtualHost *
